@@ -1,19 +1,13 @@
-from my_class import *
-# # scripts/main.py
+# import pandas as pd
 # import os
 # import sys
+# sys.path.append(os.path.abspath("../src"))
 
-# # Add the src directory to the Python path
-# # sys.path.append(os.path.abspath('../src'))
+from data_cleaning_class import dataCleaning
+df_chem = dataCleaning("C:\\Users\\Aman\\Desktop\\week7\\data\\chemed123_messages.csv")
+# df_doctor = pd.read_csv("C:\\Users\\Aman\\Desktop\\week7\\data\\doctorset_messages.csv")
+df_chem = df_chem.clean_data()
+# df_doctor = dataCleaning(df_doctor)
 
-# sys.path.insert(0, 'C:\\Users\\Aman\\Desktop\\week7\\src\\my_class.py')
 
-
-# # Now import the class
-from my_class import MyClass
-
-# Create an instance of MyClass
-my_instance = MyClass("Alice")
-
-# Call the greet method
-print(my_instance.greet())
+print(df_chem.head())
